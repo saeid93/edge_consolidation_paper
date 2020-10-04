@@ -1,0 +1,14 @@
+{
+    "num_of_repeat": 5,
+    "type_env":2,
+    "dataset": 2,
+    "total_timesteps": 1000,
+    "SPEED_LIMIT":30,
+    "cons_w": 0.9,
+    "lat_w": 0.1,
+    "allowed_moves": 3,
+    "penalty_illegal": -10,
+    "penalty_normal": 1,
+    "penalty_consolidated":100,
+    "penalty_latency": 100
+}

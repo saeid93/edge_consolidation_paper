@@ -1,0 +1,8 @@
+{
+    "num_of_repeat": 5,
+    "type_env":3,
+    "dataset": 0,
+    "total_timesteps": 1000,
+    "SPEED_LIMIT":30,
+    "allowed_moves": 3
+}

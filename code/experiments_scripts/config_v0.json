@@ -1,0 +1,10 @@
+{
+    "num_of_repeat": 3,
+    "type_env": 0,
+    "dataset": 2,
+    "total_timesteps": 10000,
+    "allowed_moves": 3,
+    "penalty_illegal": -10,
+    "penalty_normal": 1,
+    "penalty_consolidated": 100
+}
