@@ -5,7 +5,9 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 from constants import RESULTS_PATH
+import matplotlib
 
+matplotlib.use('Agg')
 
 def reader(dir2load, type_of): #TODO make it like plot_aggregate_results.py
     bin_size = 50
