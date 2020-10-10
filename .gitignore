@@ -1,6 +1,6 @@
 ### My own ignores ###
 *.pyc
-.venv
+.venv*
 .vscode
 play_codes
 .idea
@@ -10,6 +10,7 @@ dummy-test
 .DS_Store
 .vsCodeCounter
 *.code-workspace
+gym_edgesimulator.egg-info
 # experiments.db
 
 ### Linux ###

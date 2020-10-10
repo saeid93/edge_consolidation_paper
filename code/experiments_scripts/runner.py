@@ -1,3 +1,8 @@
+"""
+    this script is used to learn to use one of the
+    config_v(0-3).json to run one of the environments
+    learning
+"""
 import pickle
 import json
 import os
@@ -23,6 +28,12 @@ from event_to_csv import to_csv
 from plot_graphs import plot_graphs
 
 def learn(type_env, dataset, num_of_repeat, **params):
+    """
+        set the directory to read and save dataset
+        and use functions in learners.py to send the
+        dataset to the approperiate function in learners.py
+        learn_v0, learn_v1, learn_v2, learn_v3
+    """
 
     # set the directories
     dir2load = os.path.join(DATASETS_BASE_PATH, str(dataset))
@@ -80,10 +91,8 @@ def learn(type_env, dataset, num_of_repeat, **params):
 @click.command()
 @click.argument('config_file')
 def main(config_file):
-
     with open(config_file) as cf:
         config = json.loads(cf.read())
-
     learn(**config)
 
 

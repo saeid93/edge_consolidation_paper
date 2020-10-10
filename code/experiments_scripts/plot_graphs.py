@@ -1,3 +1,8 @@
+"""
+   plot the graphs for a single learning iteration
+   used in runner.py
+"""
+
 import seaborn as sns
 import pandas as pd
 import os
@@ -6,8 +11,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from constants import RESULTS_PATH
 
-
-def reader(dir2load, type_of): #TODO make it like plot_aggregate_results.py
+def reader(dir2load, type_of):
+    """
+        Read the csv results of the experiments
+        from the models folder
+    """
     bin_size = 50
     repeats = os.listdir(dir2load)
     repeats.remove('graphs')
@@ -26,6 +34,9 @@ def reader(dir2load, type_of): #TODO make it like plot_aggregate_results.py
 
 
 def plot_graphs(dir2load):
+    """
+        plot all three graphs 
+    """
 
     dir2save = f'{dir2load}/graphs'
     os.makedirs(dir2save, exist_ok=True)

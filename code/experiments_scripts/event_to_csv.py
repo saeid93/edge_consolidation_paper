@@ -1,5 +1,7 @@
 # code from: https://github.com/theRealSuperMario/supermariopy/blob/master/scripts/tflogs2pandas.py
-
+"""
+   script for converting the tensorboard logs to csv files
+"""
 import tensorflow as tf
 import glob
 import os
@@ -76,15 +78,8 @@ def to_csv(logdir_or_logfile: str, out_dir: str):
         )
     # Call & append
     if event_paths:
-        # pp.pprint("Found tensorflow logs to process:")
-        # pp.pprint(event_paths)
         all_logs = many_logs2pandas(event_paths)
-        # pp.pprint("Head of created dataframe")
-        # pp.pprint(all_logs.head())
-
         os.makedirs(out_dir, exist_ok=True)
-
-        print("saving to csv file")
         
         # extract desired part of the results
         fraction_of_latency = all_logs[all_logs['metric']=="fraction_of_latency"][['step','value']]

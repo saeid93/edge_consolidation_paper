@@ -1,0 +1,6 @@
+{
+    "dataset":2,
+    "type_env":[2,2,2],
+    "sessions":[1,2,3],
+    "session_labels":["high","medium","low"]
+}

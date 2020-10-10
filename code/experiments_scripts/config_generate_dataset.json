@@ -1,0 +1,13 @@
+{
+    "num_of_services":21,
+    "MIN_SERVICE_MEM": 2,
+    "MAX_SERVICE_MEM": 8,
+    "MERGE_FAC": 3,
+    "num_of_GT": 5,
+    "PERC_LAT": 0.5,
+    "latency_factor": 1,
+    "num_of_users": 20,
+    "num_of_stations": 10,
+    "num_of_samples": 10,
+    "seed": 80
+}
