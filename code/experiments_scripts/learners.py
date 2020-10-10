@@ -17,7 +17,6 @@ from stable_baselines import PPO2
 from gym_edgesimulator.callbacks import TensorboardCallback
 from gym_edgesimulator.callbacks import ObjReturnCallback
 
-
 # ------ environment v0 ------
 def learn_v0(initial_state, dir2save,
              total_timesteps, allowed_moves,

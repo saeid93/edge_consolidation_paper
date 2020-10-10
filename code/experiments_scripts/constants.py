@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """set the constant variables path to three constant varialbes
    in your computer the three folders are:
    1. DATASETs_BASE_PATH: path to the initially empty folder used to
@@ -10,4 +11,10 @@
 
 DATASETS_BASE_PATH = "/Users/saeid/Codes/edge_consolidation_paper/data"
 MODELS_PATH = "/Users/saeid/Codes/edge_consolidation_paper/models"
+=======
+DATASETS_BASE_PATH = "/homes/sg324/edge_consolidation_paper/data"
+MODELS_PATH = "/homes/sg324/edge_consolidation_paper/models"
+# DATASETS_BASE_PATH = "/Users/saeid/Codes/EdgeSysPaper/data"
+# MODELS_PATH = "/Users/saeid/Codes/EdgeSysPaper/models"
+>>>>>>> 943375d29b8a9c4a8e16ae4edc2b1a10ceb6eebb
 RESULTS_PATH = "/Users/saeid/Codes/edge_consolidation_paper/results"

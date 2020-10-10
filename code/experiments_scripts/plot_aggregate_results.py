@@ -16,7 +16,9 @@ import click
 
 from constants import RESULTS_PATH
 from constants import MODELS_PATH
+import matplotlib
 
+matplotlib.use('Agg')
 
 def reader(dir2load, label):
     types_of = ["episode_reward", "fraction_of_latency",

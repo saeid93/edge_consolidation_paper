@@ -10,12 +10,19 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 from constants import RESULTS_PATH
+import matplotlib
 
+<<<<<<< HEAD
 def reader(dir2load, type_of):
     """
         Read the csv results of the experiments
         from the models folder
     """
+=======
+matplotlib.use('Agg')
+
+def reader(dir2load, type_of): #TODO make it like plot_aggregate_results.py
+>>>>>>> 943375d29b8a9c4a8e16ae4edc2b1a10ceb6eebb
     bin_size = 50
     repeats = os.listdir(dir2load)
     repeats.remove('graphs')
