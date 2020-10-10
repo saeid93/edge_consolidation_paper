@@ -12,16 +12,15 @@ from gym_edgesimulator.util import plot_black
 from gym_edgesimulator.envs.edgesim_v0 import EdgeSimV0
 from gym_edgesimulator import Simulator
 
-# TODO check learning and rewards - end to end debug to see
-# if all the rewards in all states are computed correctly
-
 class EdgeSimV1(EdgeSimV0):
     """
         The base Edge simulator environment
         with only the latency no consolidation
         the servers and services.
         EdgeSim-v1
-        observations --> concatenate(services_servers, users_stations)
+        observations: concatenate(services_servers, users_stations)
+        actions:      concatenate(indecies in services server to moves, servers to move)
+        rewards:      fraction_of_latency*penaly + fraction_of_consolidated*penalty
     """
     # inherited _reward_illegal(self, penalty):
     # inherited _reward_not_done(self, penalty):

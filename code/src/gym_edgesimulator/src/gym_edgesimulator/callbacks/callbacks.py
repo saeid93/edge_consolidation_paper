@@ -1,5 +1,13 @@
+"""
+    callbacks to keep track of the resutls
+"""
 import pprint
 from unittest.mock import patch
+
+import tensorflow as tf
+import numpy as np
+
+from stable_baselines.common.callbacks import BaseCallback
 
 def unsorted_pprint(*args, **kwargs):
     with patch('builtins.sorted', new=lambda l, **_: l):
@@ -8,18 +16,9 @@ def unsorted_pprint(*args, **kwargs):
 orig_pprint = pprint.pprint
 pprint.pprint = unsorted_pprint
 
-import tensorflow as tf
-import numpy as np
-
-# from stable_baselines import SAC
-from stable_baselines.common.callbacks import BaseCallback
-
-# model = SAC("MlpPolicy", "Pendulum-v0", tensorboard_log="/tmp/sac/", verbose=1)
-
-# TODO make it independent of tensorflow
 class TensorboardCallback(BaseCallback):
     """
-    Custom callback for plotting additional values in tensorboard.
+        Custom callback for plotting additional values in tensorboard.
     """
     def __init__(self, verbose=0):
         self.is_tb_set = False
@@ -38,8 +37,8 @@ class TensorboardCallback(BaseCallback):
 
 class ObjReturnCallback(BaseCallback):
     """
-    Custom callback for getting the final objective of the
-    algorithm
+        Custom callback for getting the final objective of the
+        algorithm
     """
     def __init__(self, verbose=0):
         self.is_tb_set = False
@@ -57,15 +56,13 @@ class ObjReturnCallback(BaseCallback):
 
 class DebugCallback(BaseCallback):
     """
-    Custom callback for debugging output.
+        Custom callback for debugging output.
     """
     def __init__(self, verbose=0, with_fig=False):
-        # self.is_tb_set = False
         super(DebugCallback, self).__init__(verbose)
         self.with_fig = with_fig
 
     def _on_step(self) -> bool:
-        # if self.training_env.buf_infos[0]['state']==2:
         print(f"n_calls: {self.n_calls}")
         pprint.pprint(self.training_env.buf_infos[0])
         if self.with_fig:

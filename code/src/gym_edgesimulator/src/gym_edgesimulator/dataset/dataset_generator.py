@@ -3,16 +3,38 @@ from gym_edgesimulator import Simulator
 
 
 class DatasetGenerator:
+    """
+        class to build a dataset for experiments
+    """
     def __init__(self, num_of_services, MIN_SERVICE_MEM,
                  MAX_SERVICE_MEM, MERGE_FAC, num_of_GT,
                  PERC_LAT, latency_factor, num_of_users, num_of_stations,
                  seed):
+    """
+        num_of_services:  number of services
+        MIN_SERVICE_MEM:  minimum memory bound of the to be generated services
+        MAX_SERVICE_MEM:  maximum memory bound of the to be generated services
+        MERGE_FAC:        we first make some number of services and then merge them
+                          by a factor to build full servers to have
+                          number of full servers = num_of_services/MERGE_FAC
+        num_of_GT:        after having the full servers we add a number of fully empty
+                          servers to the end
+        PERC_LAT:         the ratio of users that if we read to that we consider it a
+                          done state
+        latency_factor:   latency factor determine the higher bound of the latency of services
+                          it is computed as
+                          lower bound of the latency = largest station to server distance
+                          higher bound of the latency = latency_factor * lower bound of the latency
+        num_of_users:     number of users in the generated dataset
+        num_of_stations:  number of statins in the generated dataset
+        seed
+    """
 
         # consolidation variable
         if num_of_services % MERGE_FAC:
             raise RuntimeError('num_of_services is not divisible by MERGE_FAC')
         self.num_of_full_servers = int(num_of_services / MERGE_FAC)
-        self.num_of_GT = num_of_GT                 # BUG the name of Ground Truth is misleading
+        self.num_of_GT = num_of_GT
         self.num_of_servers = self.num_of_full_servers + self.num_of_GT
         self.num_of_services = num_of_services
         self.MIN_SERVICE_MEM = MIN_SERVICE_MEM

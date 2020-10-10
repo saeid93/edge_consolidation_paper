@@ -9,8 +9,6 @@ from gym.spaces import Box, MultiDiscrete
 from gym_edgesimulator.util import plot_color
 from gym_edgesimulator.util import plot_black
 
-# TODO check learning and rewards - end to end debug to see
-# if all the rewards in all states are computed correctly
 
 class EdgeSimV0(gym.Env):
     """
@@ -18,13 +16,15 @@ class EdgeSimV0(gym.Env):
         without the users and stations only
         the servers and services and consolidation objective.
         EdgeSim-v0
-        observations --> services_servers
+        observations: services_servers
+        actions:      concatenate(indecies in services server to moves, servers to move)
+        rewards:      fraction_of_latency*penaly + fraction_of_consolidated*penalty
     """
     def __init__(self, initial_state, allowed_moves, penalty_illegal,
                  penalty_normal, penalty_consolidated, seed):
 
         # initialize seed to ensure reproducible resutls
-        self.seed = seed # TODO to fix
+        self.seed = seed
         # np.random.seed(seed)
 
         # find the servers' and services' numbers

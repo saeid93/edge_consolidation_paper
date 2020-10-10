@@ -19,6 +19,9 @@ class EdgeSimV3(EdgeSimV1):
         make a fake simulator for initial gym integration,
         it builds a random initialization of servers, stations,
         memory and then simulate movement
+        observations: concatenate(services_servers, users_stations)
+        actions:      does not exist (actions come from greedy algorithm)
+        rewards:      dones not exist
     """
 
     def __init__(self, initial_state, allowed_moves,
