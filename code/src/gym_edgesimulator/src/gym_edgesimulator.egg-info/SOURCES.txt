@@ -1,6 +1,0 @@
-setup.py
-src/gym_edgesimulator.egg-info/PKG-INFO
-src/gym_edgesimulator.egg-info/SOURCES.txt
-src/gym_edgesimulator.egg-info/dependency_links.txt
-src/gym_edgesimulator.egg-info/requires.txt
-src/gym_edgesimulator.egg-info/top_level.txt
