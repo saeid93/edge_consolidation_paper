@@ -1,5 +1,6 @@
 # Consolidation of Services in Mobile Edge Clouds using a Learning-based Framework
 Source code of "Consolidation of Services in Mobile Edge Clouds using a Learning-based Framework"
+paper link: https://ieeexplore.ieee.org/abstract/document/9284153
 
 # Setup the Python environment
 1. Download source code from GitHub
